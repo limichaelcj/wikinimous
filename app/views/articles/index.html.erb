@@ -1,0 +1,19 @@
+<h1>Wikinimous</h1>
+<%= link_to 'Post new article', new_article_path, class: 'button' %>
+<ul>
+  <% @articles.each do |article| %>
+  <li>
+    <%= link_to article_path(article) do %>
+    <li></li>
+      <div class="entry">
+        <h2><%= article.title %></h2>
+        <p class="preview"><%= article.content %></p>
+      </div>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<script type="text/javascript">
+  TweenMax.staggerFrom('.entry', 0.4, {x: -600, delay: 0.2, opacity: 0, scale: 0.8, ease: Power4.easeOut}, 0.1);
+</script>

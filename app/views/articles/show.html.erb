@@ -1,0 +1,11 @@
+<h1>Wikinimous</h1>
+<ul>
+  <h2><%= @article.title %></h2>
+  <p><%= @article.content %></p>
+  <%= link_to 'Edit', edit_article_path, class: 'button' %>
+  <pre> | </pre>
+  <%= link_to 'Delete', article_path(@article), method: :delete, class: 'button', data: { confirm: "Delete '#{@article.title}'?"} %>
+  <pre> | </pre>
+  <%= render 'link_home' %>
+</ul>
+
